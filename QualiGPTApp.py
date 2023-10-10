@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
+
+# In[1]:
+
+
 # QualiGPT-v0.1.0-alpha Created by: @He Albert Zhang 
 
 import sys
@@ -448,27 +452,6 @@ class QualiGPTApp(QMainWindow):
         else:
             # 如果数据内容不超过4096 tokens
             self.saved_segments = [self.data_content]
-        # 如果数据内容超过4096 tokens
-        #if len(self.data_content) > 4096:
-        #    self.dataset_segments = self.split_into_segments(self.data_content, 4096 - 300)  # Reserve some tokens for additional prompts
-        #    for segment in self.dataset_segments:
-        #        interim_prompt = segment + "\n(Note: This dataset has more content following this segment.)"
-        #        try:
-        #            response = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=[
-        #                {"role": "system", "content": "You are a helpful assistant."},
-        #                {"role": "user", "content": interim_prompt}
-        #            ])
-        #            print(f"Data segment successfully submitted.")
-        #        except openai.error.OpenAIError as e:
-        #            print(f"OpenAI Error: {str(e)}")
-        #            QMessageBox.critical(self, "Error", f"Failed to submit dataset segment to ChatGPT API. OpenAI Error: {str(e)}")
-        #            return
-        #        except Exception as e:
-        #            print(f"Other Error: {str(e)}")
-        #            QMessageBox.critical(self, "Error", f"Failed to submit dataset segment to ChatGPT API. Other Error: {str(e)}")
-        #            return
-        #    # Split the data_content into segments
-            
 
             QMessageBox.information(self, "Success", "Dataset has been segmented and is ready for analysis.")
 
@@ -639,11 +622,13 @@ class QualiGPTApp(QMainWindow):
 
         return segments
 
-if __name__ == '__main__':
+def main():
     app = QApplication(sys.argv)
-
     window = QualiGPTApp()
     window.show()
-
     sys.exit(app.exec_())
+
+if __name__ == '__main__':
+    main()
+
 
