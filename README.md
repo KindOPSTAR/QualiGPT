@@ -13,9 +13,13 @@ The list of required packages is as follows:
 ## **QualiGPT-v0.1.0-alpha:**
 We have released the **[QualiGPT-v0.1.0-alpha](https://github.com/KindOPSTAR/QualiGPT/releases)** (Windows) version for testing. If you prefer not to build from the source code, please use this version.
 
-~~Once you have installed all the packages required for this tool, please download the 'QualiGPTApp.py' file and run it through the `command prompt` (cmd).~~
 
-~~If you are using [Jupyter Notebook](https://jupyter.org/), you can download 'QualiGPTApp.ipynb' and run it within Jupyter Notebook. However, please note that after each run, you'll need to restart the kernel to run it again.~~
+## **Source Code:**
+We have fully open-sourced the program, providing both .py and .ipynb files to build QualiGPT-v0.1.0-alpha. For a detailed description, please refer to the [Version Release](https://github.com/KindOPSTAR/QualiGPT/releases).
+
+Once you have installed all the packages required for this tool, please download the 'QualiGPTApp.py' file and run it through the `command prompt` (cmd), or **(highly recommended)** compile from [VS Code](https://code.visualstudio.com/). 
+
+If you are using [Jupyter Notebook](https://jupyter.org/), you can download 'QualiGPTApp.ipynb' and run it within Jupyter Notebook. However, please note that after each run, you'll need to restart the kernel to run it again.
 
 
 
