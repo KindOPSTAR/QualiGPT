@@ -9,7 +9,7 @@ The list of required packages is as follows:
 - `pip install python-docx`
 - `pip install docx2txt`
 - `pip install python-csv`
-- `pip install pandas`
+- `pip install pandas`  
 
 Once you have installed all the packages required for this tool, please download the 'QualiGPTApp.py' file and run it through the command prompt (cmd).
 
