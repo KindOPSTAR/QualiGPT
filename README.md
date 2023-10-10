@@ -33,3 +33,5 @@ Please cite these papers in your publications if QualiGPT helps your research. T
       primaryClass={cs.HC}
 }
 
+## **License:**
+QualiGPT is freely available for free non-commercial use only. (We may modify the license at a later time.)
