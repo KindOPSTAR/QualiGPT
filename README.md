@@ -43,5 +43,5 @@ Please cite these papers in your publications if QualiGPT helps your research. T
       primaryClass={cs.HC}
 }
 
-## **License:**
+## **License**
 QualiGPT is freely available for use, and may be redistributed any content in this repository under the [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode) and the [MIT License](https://opensource.org/license/mit/). QualiGPT is freely available for academic and commercial use. We hope it benefits the research community and facilitates further advancements in the field. We encourage users to contribute and provide feedback to improve the tool.
