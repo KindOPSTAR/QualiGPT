@@ -24,7 +24,7 @@ We have released the **[QualiGPT-v0.1.0-alpha](https://github.com/KindOPSTAR/Qua
 ## **QuickStart**
 Please download `QualiGPT-v0.1.0-alpha.exe` from [Version Release](https://github.com/KindOPSTAR/QualiGPT/releases).
 
-## **Source Code & Usage **
+## **Source Code & Usage**
 We have fully open-sourced the early version of this program, providing both .py and .ipynb files to build QualiGPT-v0.1.0-alpha. For a detailed description, please refer to the [Version Release](https://github.com/KindOPSTAR/QualiGPT/releases).
 
 Once you have installed all the packages required for this tool, please download the 'QualiGPTApp.py' file and run it (`python QualiGPTApp.py`) through the `command prompt` (cmd), or **(highly recommended)** compile from [VS Code](https://code.visualstudio.com/). 
