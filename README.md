@@ -11,5 +11,6 @@ The list of required packages is as follows:
 - `pip install python-csv`
 - `pip install pandas`  
 
-Once you have installed all the packages required for this tool, please download the 'QualiGPTApp.py' file and run it through the command prompt (cmd).
+Once you have installed all the packages required for this tool, please download the 'QualiGPTApp.py' file and run it through the `command prompt` (cmd).
 
+If you are using [Jupyter Notebook](https://jupyter.org/), you can download 'QualiGPTApp.ipynb' and run it within Jupyter Notebook. However, please note that after each run, you'll need to restart the kernel to run it again.
