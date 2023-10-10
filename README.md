@@ -8,11 +8,14 @@ The list of required packages is as follows:
 - `pip install PyQt5`
 - `pip install python-docx`
 - `pip install docx2txt`
-- `pip install pandas`  
+- `pip install pandas`
 
-Once you have installed all the packages required for this tool, please download the 'QualiGPTApp.py' file and run it through the `command prompt` (cmd).
+## **QualiGPT-v0.1.0-alpha:**
+We have released the **[QualiGPT-v0.1.0-alpha](https://github.com/KindOPSTAR/QualiGPT/releases)** (Windows) version for testing. If you prefer not to build from the source code, please use this version.
 
-If you are using [Jupyter Notebook](https://jupyter.org/), you can download 'QualiGPTApp.ipynb' and run it within Jupyter Notebook. However, please note that after each run, you'll need to restart the kernel to run it again.
+~~Once you have installed all the packages required for this tool, please download the 'QualiGPTApp.py' file and run it through the `command prompt` (cmd).~~
 
-We have released the [QualiGPT-v0.1.0-alpha](https://github.com/KindOPSTAR/QualiGPT/releases) (Windows) version for testing. If you prefer not to build from the source code, please use this version.
+~~If you are using [Jupyter Notebook](https://jupyter.org/), you can download 'QualiGPTApp.ipynb' and run it within Jupyter Notebook. However, please note that after each run, you'll need to restart the kernel to run it again.~~
+
+
 
