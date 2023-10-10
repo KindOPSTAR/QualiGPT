@@ -21,5 +21,15 @@ Once you have installed all the packages required for this tool, please download
 
 If you are using [Jupyter Notebook](https://jupyter.org/), you can download 'QualiGPTApp.ipynb' and run it within Jupyter Notebook. However, please note that after each run, you'll need to restart the kernel to run it again.
 
+## **Citation**
+Please cite these papers in your publications if QualiGPT helps your research.
 
+> @misc{zhang2023redefining,
+      title={Redefining Qualitative Analysis in the AI Era: Utilizing ChatGPT for Efficient Thematic Analysis}, 
+      author={He Zhang and Chuhao Wu and Jingyi Xie and Yao Lyu and Jie Cai and John M. Carroll},
+      year={2023},
+      eprint={2309.10771},
+      archivePrefix={arXiv},
+      primaryClass={cs.HC}
+}
 
