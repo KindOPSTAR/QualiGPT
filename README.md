@@ -1,5 +1,6 @@
 # **QualiGPT: An easy-to-use tool for qualitative research (automatic coding)**
-QualiGPT: An easy-to-use tool for qualitative research
+QualiGPT: An easy-to-use tool for qualitative research  
+<img src="graph/Logo-QualiGPT.png" alt="Logo-QualiGPT" width="400">
 
 Before running, please check your Python environment and install the appropriate packages using  ` pip install` .
 The list of required packages is as follows:
