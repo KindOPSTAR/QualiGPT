@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
-
-# In[3]:
-# QualiGPT-v0.1.0-alpha - created by @He Albert Zhang
+# QualiGPT-v0.1.0-alpha Created by: @He Albert Zhang 
 
 import sys
 import pandas as pd
