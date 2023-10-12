@@ -29,7 +29,7 @@ We have fully open-sourced the early version of this program, providing both .py
 
 Once you have installed all the packages required for this tool, please download the 'QualiGPTApp.py' file and run it (`python QualiGPTApp.py`) through the `command prompt` (cmd), or **(highly recommended)** compile from [VS Code](https://code.visualstudio.com/). 
 
-If you are using [Jupyter Notebook](https://jupyter.org/), you can download 'QualiGPTApp.ipynb' and run it within Jupyter Notebook. However, please note that after each run, you'll need to restart the kernel to run it again.
+If you are using [Jupyter Notebook](https://jupyter.org/), please convert `QualiGPTApp.py` to `QualiGPTApp.ipynb`. Please note that after each run, you'll need to restart the kernel to run it again.
 
 ## **Citation**
 Please cite these papers in your publications if QualiGPT helps your research. The theoretical foundation for developing QualiGPT comes from: **[Redefining Qualitative Analysis in the AI Era: Utilizing ChatGPT for Efficient Thematic Analysis](https://arxiv.org/abs/2309.10771)**.
