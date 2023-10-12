@@ -9,7 +9,7 @@
 
 ![Python version](https://img.shields.io/badge/python-3.8_|_Later-blue) 
 
-
+QualiGPT is a toolkit with a visual interactive interface based on the OpenAI API. It can assist qualitative analysts in quickly coding data from interviews, focus groups, or social media (posts or comments) stored in Word documents or spreadsheets (.xlsx or .csv). The results can be saved in .txt or .csv formats for easy and quick viewing
 
 <img src="graph/QualiGPT-teaserfigure.png" alt="Logo-QualiGPT" width="1000">
 <p align="center">Figure 1. Overview of the qualitative analysis toolkit, QualiGPT. The user interface of QualiGPT is displayed on the left. On the right side, the usage flow and design logic of QualiGPT are presented.</p>
@@ -24,7 +24,7 @@ The list of required packages is as follows:
 - `pip install pandas`
 
 ## **QualiGPT-v0.1.0-alpha**
-We have released the **[QualiGPT-v0.1.0-alpha](https://github.com/KindOPSTAR/QualiGPT/releases)** (Windows) version for testing. If you prefer not to build from the source code, please use this version.
+We have released the **[QualiGPT-v0.1.0-alpha](https://github.com/KindOPSTAR/QualiGPT/releases)** (Windows) version for testing. If you prefer not to build from the source code, please use [this](https://github.com/KindOPSTAR/QualiGPT/releases/tag/QualiGPTApp) version.
 
 ## **QualiGPT-v0.1.0-alpha Release Notes**
 Click [here](https://github.com/KindOPSTAR/QualiGPT/releases/tag/QualiGPTApp) to read QualiGPT-v0.1.0-alpha Release Notes
@@ -35,11 +35,18 @@ Please download `QualiGPT-v0.1.0-alpha.exe` from [Version Release](https://githu
 ## **Source Code & Usage**
 We have fully open-sourced the early version of this program, providing both .py and .ipynb files to build QualiGPT-v0.1.0-alpha. For a detailed description, please refer to the [Version Release](https://github.com/KindOPSTAR/QualiGPT/releases).
 
+1. Please download the `QualiGPTApp.py` file from repository.
 1. Navigate to the directory, for example, `cd ../QualiGPT` 
 2. Install the required packages `pip install -r requirements.txt` (If you prefer not to use the `requirements.txt` file, you can manually install each package.)
-3. Once you have installed all the packages required for this tool, please download the `QualiGPTApp.py` file and run it (`python QualiGPTApp.py`) through the `command prompt` (cmd), or **(highly recommended)** compile from [VS Code](https://code.visualstudio.com/).  
+3. Once you have installed all the packages required for this tool, please run (`python QualiGPTApp.py`) through the `command prompt` (cmd), or **(highly recommended)** compile from [VS Code](https://code.visualstudio.com/). If you are using [Jupyter Notebook](https://jupyter.org/), please convert `QualiGPTApp.py` to `QualiGPTApp.ipynb`. Please note that after each run, you'll need to restart the kernel to run it again.  
 
-If you are using [Jupyter Notebook](https://jupyter.org/), please convert `QualiGPTApp.py` to `QualiGPTApp.ipynb`. Please note that after each run, you'll need to restart the kernel to run it again.  
+### How to get OpenAI API.
+
+- Please register and log in to [OpenAI](https://openai.com/) to request your personal API key and keep it safe.
+
+### User manual
+
+Please follow the **user manual** to use QualiGPT.
 
 <img src="graph/QualiGPT Toolkit Instruction Manual.png" alt="User manual" width="1200">
 <p align="center">Figure 2. User manual</p>
