@@ -26,6 +26,9 @@ The list of required packages is as follows:
 ## **QualiGPT-v0.1.0-alpha**
 We have released the **[QualiGPT-v0.1.0-alpha](https://github.com/KindOPSTAR/QualiGPT/releases)** (Windows) version for testing. If you prefer not to build from the source code, please use this version.
 
+## **QualiGPT-v0.1.0-alpha Release Notes**
+Click [here](https://github.com/KindOPSTAR/QualiGPT/releases/tag/QualiGPTApp) to view QualiGPT-v0.1.0-alpha Release Notes
+
 ## **QuickStart**
 Please download `QualiGPT-v0.1.0-alpha.exe` from [Version Release](https://github.com/KindOPSTAR/QualiGPT/releases).
 
