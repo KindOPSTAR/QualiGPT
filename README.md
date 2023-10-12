@@ -48,6 +48,19 @@ We have fully open-sourced the early version of this program, providing both .py
 
 Please follow the **user manual** to use QualiGPT.
 
+- Step 1. ① (enter the API Key)
+- Step 2. ② (connect to API)
+- Step 3. ③ (select dataset)
+- Step 4. ④ (submit dataset)
+- Step 5. ⑤ (optional)
+- Step 6. ⑥ (optional)
+- Step 7. ⑦ (select the type of dataset)
+- Step 8. ⑧ (select the number of themes)
+- Step 9. ⑨ (optional)
+- Step 10. ⑩ (submit the task)
+- Step 11. ⑪ or ⑫
+
+
 <img src="graph/QualiGPT Toolkit Instruction Manual.png" alt="User manual" width="1200">
 <p align="center">Figure 2. User manual</p>
 
