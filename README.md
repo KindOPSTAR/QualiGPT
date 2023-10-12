@@ -12,7 +12,7 @@
 
 QualiGPT is a toolkit with a visual interactive interface based on the OpenAI API. It can assist qualitative analysts in quickly coding data from interviews, focus groups, or social media (posts or comments) stored in Word documents or spreadsheets (.xlsx or .csv). The results can be saved in .txt or .csv formats for easy and quick viewing.
 
-<img src="graph/QualiGPT-teaserfigure.png" alt="Logo-QualiGPT" width="1000">
+<img src="graph/QualiGPT-workflow.png" alt="Logo-QualiGPT" width="1000">
 <p align="center">Figure 1. Overview of the qualitative analysis toolkit, QualiGPT. The user interface of QualiGPT is displayed on the left. On the right side, the usage flow and design logic of QualiGPT are presented.</p>
 
 Before running, please check your Python environment and install the appropriate packages using  ` pip install` .
