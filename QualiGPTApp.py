@@ -34,7 +34,7 @@ class QualiGPTApp(QMainWindow):
         self.current_dataset = None  # Add this line
         self.dataset_segments = []
         self.saved_segments = []
-        self.all_responses = [] # 用于存储所有的响应
+        self.all_responses = [] # Used to store all responses
 
         # Initialize prompts dictionary
         self.prompts = {
@@ -100,7 +100,7 @@ class QualiGPTApp(QMainWindow):
         self.layout.addWidget(self.api_key_label)
 
         self.api_key_input = QLineEdit(self)
-        self.api_key_input.setEchoMode(QLineEdit.Password)  # 设置为Password模式，这样输入的内容会显示为***
+        self.api_key_input.setEchoMode(QLineEdit.Password)  # Set to Password mode so that the input will appear as ****
         self.layout.addWidget(self.api_key_input)
         
         # Connect to OpenAI API Button
@@ -208,7 +208,7 @@ class QualiGPTApp(QMainWindow):
     def update_preset_prompts(self):
         #current_data_type = self.data_type_selection.currentText()
             
-         # 使用QRadioButton的isChecked()方法来检查哪个单选框被选中
+         # Use the QRadioButton's isChecked() method to check which box is checked.
         if self.interview_radio.isChecked():
             current_data_type = "Interview"
         elif self.focus_group_radio.isChecked():
