@@ -5,7 +5,7 @@
 
 ![Static Badge](https://img.shields.io/badge/Release%20(latest%20by%20date)-v0.1.0_alpha-brightgreen?logo=GitHub&link=https%3A%2F%2Fgithub.com%2FKindOPSTAR%2FQualiGPT%2Freleases%2Ftag%2FQualiGPTApp)
 ![Static Badge](https://img.shields.io/badge/Windows-passing-brightgreen?logo=Windows)
-![GitHub](https://img.shields.io/github/license/KindOPSTAR/QualiGPT)
+
 
 ![Python version](https://img.shields.io/badge/python-3.8_|_Later-blue) 
 
