@@ -1,8 +1,6 @@
 # **QualiGPT**
 **QualiGPT: An easy-to-use tool for qualitative research (automatic coding)**  
 
-This project is one of the works in a series of projects. To view the complete project, please visit the [LLMs x Generative AI Project](https://he-zhang.com/home/531-2/llmsxai/).
-
 <img src="graph/Logo-QualiGPT.png" alt="Logo-QualiGPT" width="400">
 
 ![Static Badge](https://img.shields.io/badge/Release%20(latest%20by%20date)-v0.1.0_alpha-brightgreen?logo=GitHub&link=https%3A%2F%2Fgithub.com%2FKindOPSTAR%2FQualiGPT%2Freleases%2Ftag%2FQualiGPTApp)
