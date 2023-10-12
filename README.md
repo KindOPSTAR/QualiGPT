@@ -9,6 +9,9 @@
 
 <img src="graph/Logo-QualiGPT.png" alt="Logo-QualiGPT" width="400">
 
+<img src="graph/QualiGPT Toolkit Instruction Manual.png" alt="User manual" width="1200">
+<p align="center">Figure. User manual</p>
+
 Before running, please check your Python environment and install the appropriate packages using  ` pip install` .
 The list of required packages is as follows:
 - `pip install nltk` 
