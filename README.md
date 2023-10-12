@@ -7,7 +7,8 @@
 ![Static Badge](https://img.shields.io/badge/Windows-passing-brightgreen?logo=Windows)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/KindOPSTAR/QualiGPT/blob/main/LICENSE)
 
-![Python version](https://img.shields.io/badge/python-3.8_|_Later-blue) 
+![Python version](https://img.shields.io/badge/python-3.8_|_Later-blue) ![Static Badge](https://img.shields.io/badge/Model-GPT--3.5_Turbo-%2300994c?logo=OpenAI&link=https%3A%2F%2Fplatform.openai.com%2Fdocs%2Fguides%2Fgpt%2Fchat-completions-api)
+
 
 QualiGPT is a toolkit with a visual interactive interface based on the OpenAI API. It can assist qualitative analysts in quickly coding data from interviews, focus groups, or social media (posts or comments) stored in Word documents or spreadsheets (.xlsx or .csv). The results can be saved in .txt or .csv formats for easy and quick viewing.
 
