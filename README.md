@@ -58,7 +58,7 @@ Please follow the **user manual** to use QualiGPT.
 - Step 8. ⑧ (select the number of themes)
 - Step 9. ⑨ (optional)
 - Step 10. ⑩ (submit the task)
-- Step 11. ⑪ or ⑫
+- Step 11. ⑪ or ⑫ (save results)
 
 
 <img src="graph/QualiGPT Toolkit Instruction Manual.png" alt="User manual" width="1200">
