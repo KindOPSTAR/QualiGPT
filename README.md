@@ -24,14 +24,14 @@ The list of required packages is as follows:
 - `pip install docx2txt`
 - `pip install pandas`
 
-## **QualiGPT-v0.1.0-alpha**
-We have released the **[QualiGPT-v0.1.0-alpha](https://github.com/KindOPSTAR/QualiGPT/releases)** (Windows) version for testing. If you prefer not to build from the source code, please use [this](https://github.com/KindOPSTAR/QualiGPT/releases/tag/QualiGPTApp) version.
+## **QualiGPT-v0.1.1-alpha**
+We have released the **[QualiGPT-v0.1.0-alpha](https://github.com/KindOPSTAR/QualiGPT/releases)** (Windows) version for testing. If you prefer not to build from the source code, please use [this](https://github.com/KindOPSTAR/QualiGPT/releases/tag/QualiGPT-v0.1.1-alpha) version.
 
-## **QualiGPT-v0.1.0-alpha Release Notes**
-Click [here](https://github.com/KindOPSTAR/QualiGPT/releases/tag/QualiGPTApp) to read QualiGPT-v0.1.0-alpha Release Notes
+## **QualiGPT-v0.1.1-alpha Release Notes**
+Click [here](https://github.com/KindOPSTAR/QualiGPT/releases/tag/QualiGPT-v0.1.1-alpha) to read QualiGPT-v0.1.1-alpha Release Notes
 
 ## **QuickStart**
-Please download `QualiGPT-v0.1.0-alpha.exe` from [Version Release](https://github.com/KindOPSTAR/QualiGPT/releases).
+Please download `QualiGPT-v0.1.1-alpha.exe` from [Version Release](https://github.com/KindOPSTAR/QualiGPT/releases).
 
 ## **Source Code & Usage**
 We have fully open-sourced the early version of this program, providing both .py and .ipynb files to build QualiGPT-v0.1.0-alpha. For a detailed description, please refer to the [Version Release](https://github.com/KindOPSTAR/QualiGPT/releases).
