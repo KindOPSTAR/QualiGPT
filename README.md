@@ -47,7 +47,7 @@ We have fully open-sourced the early version of this program, providing both .py
 
 ### User manual
 
-Please note: Since QualiGPT is currently in a testing version, it's important to set a usage cap for your API. Although the cost of GPT-3.5 Turbo is low, this could be a necessary action to reduce risk! Besides, in the coming period (which might be a few weeks or months), QualiGPT with updated models will be released.
+**Please note: Since QualiGPT is currently in a testing version, it's important to set a usage cap for your API. Although the cost of GPT-3.5 Turbo is low, this could be a necessary action to reduce risk! Besides, in the coming period (which might be a few weeks or months), QualiGPT with updated models will be released.**
 
 Please follow the **user manual** to use QualiGPT.
 
