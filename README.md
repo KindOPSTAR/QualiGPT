@@ -33,7 +33,7 @@ Click [here](https://github.com/KindOPSTAR/QualiGPT/releases/tag/QualiGPT-v0.1.1
 ## **QuickStart**
 Please download `QualiGPT-v0.1.1-alpha.exe` from [Version Release](https://github.com/KindOPSTAR/QualiGPT/releases).
 
-## **Source Code & Usage**
+## **Source Code & Usage** (This is an old version (v0.1.0-alpha), please use QuickStart to access the newest QualiGPT!)
 We have fully open-sourced the early version of this program, providing both .py and .ipynb files to build QualiGPT-v0.1.0-alpha. For a detailed description, please refer to the [Version Release](https://github.com/KindOPSTAR/QualiGPT/releases).
 
 1. Please download the `QualiGPTApp.py` file from repository.
@@ -46,6 +46,8 @@ We have fully open-sourced the early version of this program, providing both .py
 - Please register and log in to [OpenAI](https://openai.com/) to request your personal API key and keep it safe.
 
 ### User manual
+
+Please note: Since QualiGPT is currently in a testing version, it's important to set a usage cap for your API. Although the cost of GPT-3.5 Turbo is low, this could be a necessary action to reduce risk! Besides, in the coming period (which might be a few weeks or months), QualiGPT with updated models will be released.
 
 Please follow the **user manual** to use QualiGPT.
 
