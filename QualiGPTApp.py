@@ -5,6 +5,7 @@
 
 
 # QualiGPT-v0.1.0-alpha Created by: @Albert He Zhang 
+# This is an old version
 
 import sys
 import pandas as pd
