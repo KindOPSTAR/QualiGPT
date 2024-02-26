@@ -4,7 +4,7 @@
 # In[1]:
 
 
-# QualiGPT-v0.1.0-alpha Created by: @He Albert Zhang 
+# QualiGPT-v0.1.0-alpha Created by: @Albert He Zhang 
 
 import sys
 import pandas as pd
