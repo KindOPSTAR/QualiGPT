@@ -69,12 +69,15 @@ Please follow the **user manual** to use QualiGPT.
 
 ## **Timeline for Updates**
 --------------------Mar 30, 2024---------------------
+
 Recently, I have received several reports of not being able to connect to the API, please try installing the openai library in python first via "pip install openai". If this doesn't work, please wait a while and I will upload a jupyter notebook with the original code in a few days so you can build it yourself.
 
 --------------------Feb 15, 2024---------------------
+
 I finally found the time to fix a few bugs, thanks to the feedback from supporters! In version v0.1.1-alpha, Qualigpt can now support the analysis of large datasets. I've modified the program's execution logic, and the issue where reaching the token limit prevented API calls has been resolved.
 
 --------------------Oct 9, 2024---------------------
+
 First day of release.
 
 
