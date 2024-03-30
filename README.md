@@ -67,6 +67,11 @@ Please follow the **user manual** to use QualiGPT.
 <img src="graph/QualiGPT Toolkit Instruction Manual.png" alt="User manual" width="1200">
 <p align="center">Figure 2. User manual</p>
 
+## **Timeline for Updates**
+--------------------Mar 30, 2024---------------------
+Recently, I have received several reports of not being able to connect to the API, please try installing the openai library in python first via "pip install openai". If this doesn't work, please wait a while and I will upload a jupyter notebook with the original code in a few days so you can build it yourself.
+
+
 ## **Citation**
 Please cite these papers in your publications if QualiGPT helps your research. The theoretical foundation for developing QualiGPT comes from: **[Redefining Qualitative Analysis in the AI Era: Utilizing ChatGPT for Efficient Thematic Analysis](https://arxiv.org/abs/2309.10771)**.
 
