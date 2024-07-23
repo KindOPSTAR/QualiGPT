@@ -24,6 +24,9 @@ The list of required packages is as follows:
 - `pip install docx2txt`
 - `pip install pandas`
 
+## **QualiGPT-v0.1.2-alpha**
+QualiGPT-v0.1.2-alpha will be released soon. In this new version, the user can process either inductive coding or deductive coding with QualiGPT. The users need to prepare their own codebook if they are going to run deductive coding.
+
 ## **QualiGPT-v0.1.1-alpha**
 We have released the **[QualiGPT-v0.1.1-alpha](https://github.com/KindOPSTAR/QualiGPT/releases)** (Windows) version for testing. If you prefer not to build from the source code, please use [this](https://github.com/KindOPSTAR/QualiGPT/releases/tag/QualiGPT-v0.1.1-alpha) version.
 
