@@ -25,6 +25,9 @@ The list of required packages is as follows:
 - `pip install pandas`
 
 ## **QualiGPT-v0.1.2-alpha**
+QualiGPT is available on ChatGPT Store! check on -> https://chatgpt.com/g/g-HtBvI9uXe-qualigpt  Note: In the ChatGPT version, QualiGPT is created based on preset prompts and does not have open-source code, so users don't need to build it themselves. We have found some websites similar to QualiGPT, but please note that we have not open-sourced or released this tool anywhere else (this Github repository and on ChatGPT GPT store only). If you find some other webs called QualiGPT, please use it with caution.
+
+## **QualiGPT-v0.1.2-alpha**
 QualiGPT-v0.1.2-alpha will be released soon. In this new version, the user can process either inductive coding or deductive coding with QualiGPT. The users need to prepare their own codebook if they are going to run deductive coding.
 
 ## **QualiGPT-v0.1.1-alpha**
