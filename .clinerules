@@ -1,0 +1,165 @@
+# QualiGPT Project Intelligence
+
+## Project Overview
+QualiGPT is a fully functional web-based qualitative data analysis tool that successfully migrated from a PyQt5 desktop application to a modern Flask web application. The project is COMPLETE and production-ready.
+
+## Key Project Patterns
+
+### Architecture Philosophy
+- **Stateless Design**: The web app intentionally avoids data persistence for security and simplicity
+- **In-Memory Processing**: All file processing happens in memory without temporary files
+- **Single-File Deployment**: HTML is embedded in standalone files for deployment flexibility
+- **Clean Separation**: Clear separation between Flask backend and vanilla JavaScript frontend
+
+### File Structure Intelligence
+```
+QualiGPT/
+├── qualigpt-webapp.py          # Main Flask app - fully functional
+├── qualigpt-html.html          # Standalone HTML version
+├── requirements.txt            # All dependencies specified
+├── README.md                   # Comprehensive user documentation
+├── memory-bank/               # Complete project documentation
+└── graph/                     # Project assets
+```
+
+### Critical Implementation Details
+
+#### Data Processing Pipeline
+The app follows a consistent pattern:
+1. File Upload → Format Detection → Content Extraction → Segmentation → AI Analysis → Response Parsing → Export
+2. All file types (CSV, XLSX, DOCX) are normalized to consistent format
+3. Large datasets are automatically segmented to handle OpenAI token limits (3800 tokens per segment)
+
+#### OpenAI Integration Patterns
+- Uses GPT-4o with specialized prompts for three analysis types
+- Token management reserves 8k tokens for prompts and responses (128k context window)
+- Most datasets now process in single call due to larger context window
+- Multi-segment processing only for extremely large datasets
+- Structured table output with specific delimiters: `**********` start/end markers
+
+#### Error Handling Strategy
+- Comprehensive try-catch blocks with user-friendly error messages
+- Graceful degradation - partial failures don't crash the application
+- Clear distinction between OpenAI API errors and processing errors
+
+### User Experience Insights
+- Step-by-step workflow (Connect → Upload → Configure → Analyze → Export)
+- Real-time feedback with progress indicators
+- Drag-and-drop file upload with preview
+- Modern responsive interface works on desktop and tablet
+
+### Security Patterns
+- API keys stored only in memory during session
+- No persistent file storage (enhanced security)
+- Comprehensive input validation and sanitization
+- File size limits (16MB) and type restrictions
+
+## Development Workflow Preferences
+
+### Code Organization
+- Single Flask file approach works well for this scope
+- Vanilla JavaScript preferred over frameworks for simplicity
+- Embedded HTML acceptable for deployment flexibility
+- Memory bank documentation structure is comprehensive and maintainable
+
+### Testing Approach
+- Manual testing sufficient for current scope
+- Focus on file format compatibility and error conditions
+- Cross-browser testing important for web deployment
+
+### Documentation Standards
+- Memory bank structure with 6 core files provides complete project context
+- README.md serves as primary user documentation
+- Technical documentation separated from user-facing docs
+
+## Technical Debt Assessment
+
+### Acceptable Design Decisions
+- Using older OpenAI API version (0.27.8) - stable and functional
+- HTML embedded in single file - simplifies deployment
+- No automated testing - manual testing sufficient for scope
+- Stateless design - intentional and beneficial
+
+### Non-Issues
+- Single-file deployment approach is actually advantageous
+- Vanilla JavaScript reduces complexity appropriately
+- In-memory processing enhances security
+
+## Deployment Intelligence
+
+### Local Development
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python -c "import nltk; nltk.download('punkt')"
+python qualigpt-webapp.py
+```
+
+### Production Options
+- Gunicorn for production WSGI serving
+- Docker containerization ready
+- Cloud platform compatible (Heroku, AWS, GCP)
+- Environment variable support for secure configuration
+
+## Key Success Factors
+
+### What Makes This Project Work
+1. **Clear Scope**: Well-defined purpose and user needs
+2. **Simple Architecture**: Stateless design reduces complexity
+3. **Robust Error Handling**: Comprehensive exception management
+4. **User-Centric Design**: Intuitive workflow with good feedback
+5. **Complete Documentation**: Memory bank provides full context
+
+### Migration Success Elements
+- Preserved all desktop functionality while enhancing UX
+- Modern web interface significantly improves accessibility
+- Cross-platform compatibility without installation requirements
+- Simplified deployment compared to desktop distribution
+
+## Future Enhancement Readiness
+
+### Easy Additions (If Requested)
+- Additional file formats (PDF, TXT)
+- Batch processing for multiple files
+- Template separation to Flask templates
+- API version upgrades
+
+### Architecture Supports
+- Horizontal scaling (stateless design)
+- Feature additions (modular structure)
+- Different AI providers (abstracted integration)
+- Enhanced customization (flexible prompt system)
+
+## Project Status Intelligence
+
+### Current State: COMPLETE & FUNCTIONAL
+- All core features implemented and tested
+- Professional-grade output suitable for research
+- Production-ready with multiple deployment options
+- Comprehensive documentation for users and developers
+
+### Maintenance Requirements: MINIMAL
+- Stable dependency stack
+- Self-documenting code structure
+- Robust error handling reduces support needs
+- Clear upgrade paths for future enhancements
+
+## Working with This Project
+
+### Key Files to Understand
+1. `qualigpt-webapp.py` - Main application logic
+2. `memory-bank/` - Complete project context
+3. `README.md` - User documentation
+4. `requirements.txt` - Dependency specification
+
+### Common Tasks
+- **Adding Features**: Extend Flask routes and update frontend
+- **Deployment**: Use Gunicorn or Docker for production
+- **Updates**: Memory bank structure supports ongoing development
+- **Troubleshooting**: Comprehensive error handling and documentation
+
+### Project Philosophy
+This project demonstrates successful migration from desktop to web while maintaining functionality and significantly improving user experience. The stateless, security-first approach with comprehensive documentation makes it maintainable and extensible.
+
+The memory bank structure created here serves as a template for documenting complex projects with multiple stakeholders and technical considerations.

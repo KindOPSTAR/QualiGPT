@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QualiGPT - Qualitative Data Analysis Tool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            backdrop-filter: blur(10px);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .section h2 {
+            color: #495057;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="password"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+            background: white;
+        }
+        
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="number"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .status {
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .status.connected {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status.disconnected {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .file-upload {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .file-upload input[type=file] {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+        
+        .file-upload-label {
+            display: block;
+            padding: 40px;
+            text-align: center;
+            border: 2px dashed #667eea;
+            border-radius: 8px;
+            background: #f8f9fa;
+            transition: all 0.3s;
+        }
+        
+        .file-upload:hover .file-upload-label {
+            background: #e9ecef;
+            border-color: #764ba2;
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            padding: 10px 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .radio-label:hover {
+            border-color: #667eea;
+            background: #f8f9fa;
+        }
+        
+        input[type="radio"]:checked + .radio-label {
+            border-color: #667eea;
+            background: #e7e9ff;
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .results-area {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            min-height: 200px;
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .loading.active {
+            display: block;
+        }
+        
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .preview-box {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            max-height: 200px;
+            overflow-y: auto;
+            font-size: 14px;
+        }
+        
+        .header-inputs {
+            display: none;
+            margin-top: 15px;
+        }
+        
+        .header-input-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .header-input-group label {
+            min-width: 120px;
+            font-weight: 500;
+            color: #495057;
+        }
+        
+        .export-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .alert {
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .alert.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .alert.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .alert.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>QualiGPT</h1>
+        <p class="subtitle">AI-Powered Qualitative Data Analysis Tool</p>
+        
+        <div id="alert" class="alert"></div>
+        
+        <!-- Step 1: API Connection -->
+        <div class="section">
+            <h2><span class="step-number">1</span> API Connection</h2>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <input type="password" id="apiKey" placeholder="Enter your OpenAI API key">
+                <button id="connectBtn" onclick="testAPI()">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z"/>
+                    </svg>
+                    Connect
+                </button>
+                <span id="apiStatus" class="status disconnected">Disconnected</span>
+            </div>
+        </div>
+        
+        <!-- Step 2: File Upload -->
+        <div class="section">
+            <h2><span class="step-number">2</span> Upload Data File</h2>
+            <div class="file-upload">
+                <input type="file" id="fileInput" accept=".csv,.xlsx,.docx" onchange="uploadFile()">
+                <label class="file-upload-label">
+                    <svg width="48" height="48" fill="#667eea" viewBox="0 0 16 16">
+                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
+                    </svg>
+                    <p style="margin-top: 10px; color: #667eea; font-weight: 500;">Click to upload or drag and drop</p>
+                    <p style="margin-top: 5px; color: #666; font-size: 14px;">CSV, XLSX, or DOCX files</p>
+                </label>
+            </div>
+            <div id="filePreview" class="preview-box" style="display: none;"></div>
+            <div id="headerInputs" class="header-inputs"></div>
+        </div>
+        
+        <!-- Step 3: Analysis Settings -->
+        <div class="section">
+            <h2><span class="step-number">3</span> Analysis Settings</h2>
+            
+            <div style="margin-bottom: 20px;">
+                <label style="font-weight: 500; color: #495057; display: block; margin-bottom: 10px;">Data Type:</label>
+                <div class="radio-group">
+                    <div>
+                        <input type="radio" name="dataType" value="Interview" id="interview" checked>
+                        <label class="radio-label" for="interview">Interview</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="dataType" value="Focus Group" id="focusGroup">
+                        <label class="radio-label" for="focusGroup">Focus Group</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="dataType" value="Social Media Posts" id="socialMedia">
+                        <label class="radio-label" for="socialMedia">Social Media Posts</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <label style="font-weight: 500; color: #495057; display: block; margin-bottom: 10px;">Number of Themes:</label>
+                <input type="number" id="numThemes" min="1" max="20" value="10" style="width: 100px;">
+            </div>
+            
+            <label class="checkbox-label">
+                <input type="checkbox" id="rolePlayingCheck">
+                <span>Enable Role Playing (Expert Analysis Mode)</span>
+            </label>
+            
+            <div style="margin-top: 20px;">
+                <label style="font-weight: 500; color: #495057; display: block; margin-bottom: 10px;">Custom Prompt (Optional):</label>
+                <textarea id="customPrompt" rows="3" placeholder="Enter custom instructions for the analysis..."></textarea>
+            </div>
+        </div>
+        
+        <!-- Step 4: Analysis -->
+        <div class="section">
+            <h2><span class="step-number">4</span> Run Analysis</h2>
+            <button id="analyzeBtn" onclick="runAnalysis()" disabled>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+                </svg>
+                Analyze Data
+            </button>
+            
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Analyzing your data...</p>
+            </div>
+        </div>
+        
+        <!-- Results -->
+        <div class="section" id="resultsSection" style="display: none;">
+            <h2>Analysis Results</h2>
+            <div id="results" class="results-area"></div>
+            <div class="export-buttons">
+                <button onclick="exportCSV()">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                    </svg>
+                    Export as CSV
+                </button>
+                <button onclick="saveAsText()">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z"/>
+                        <path d="M3 5v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V5H3z"/>
+                    </svg>
+                    Save as Text
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let apiConnected = false;
+        let currentData = null;
+        let analysisResponse = null;
+        
+        function showAlert(message, type) {
+            const alert = document.getElementById('alert');
+            alert.className = `alert ${type} active`;
+            alert.textContent = message;
+            setTimeout(() => {
+                alert.className = 'alert';
+            }, 5000);
+        }
+        
+        async function testAPI() {
+            const apiKey = document.getElementById('apiKey').value;
+            if (!apiKey) {
+                showAlert('Please enter an API key', 'error');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/test_api', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ api_key: apiKey })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    apiConnected = true;
+                    document.getElementById('apiStatus').className = 'status connected';
+                    document.getElementById('apiStatus').textContent = 'Connected';
+                    document.getElementById('analyzeBtn').disabled = !currentData;
+                    showAlert('Successfully connected to OpenAI API', 'success');
+                } else {
+                    showAlert(`Connection failed: ${data.error}`, 'error');
+                }
+            } catch (error) {
+                showAlert(`Connection error: ${error.message}`, 'error');
+            }
+        }
+        
+        async function uploadFile() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+            
+            if (!file) return;
+            
+            const formData = new FormData();
+            formData.append('file', file);
+            
+            try {
+                const response = await fetch('/upload_file', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    currentData = data;
+                    document.getElementById('filePreview').style.display = 'block';
+                    document.getElementById('filePreview').textContent = data.preview;
+                    
+                    // Show header inputs if available
+                    if (data.headers && data.headers.length > 0) {
+                        showHeaderInputs(data.headers);
+                    }
+                    
+                    document.getElementById('analyzeBtn').disabled = !apiConnected;
+                    showAlert('File uploaded successfully', 'success');
+                } else {
+                    showAlert(`Upload failed: ${data.error}`, 'error');
+                }
+            } catch (error) {
+                showAlert(`Upload error: ${error.message}`, 'error');
+            }
+        }
+        
+        function showHeaderInputs(headers) {
+            const container = document.getElementById('headerInputs');
+            container.innerHTML = '<p style="font-weight: 500; color: #495057; margin-bottom: 10px;">Header Meanings (Optional):</p>';
+            container.style.display = 'block';
+            
+            headers.forEach(header => {
+                const group = document.createElement('div');
+                group.className = 'header-input-group';
+                group.innerHTML = `
+                    <label>${header}:</label>
+                    <input type="text" class="header-meaning" data-header="${header}" 
+                           placeholder="Describe what this column represents">
+                `;
+                container.appendChild(group);
+            });
+        }
+        
+        async function runAnalysis() {
+            if (!apiConnected || !currentData) {
+                showAlert('Please connect to API and upload a file first', 'error');
+                return;
+            }
+            
+            const apiKey = document.getElementById('apiKey').value;
+            const dataType = document.querySelector('input[name="dataType"]:checked').value;
+            const numThemes = document.getElementById('numThemes').value;
+            const customPrompt = document.getElementById('customPrompt').value;
+            const enableRolePlaying = document.getElementById('rolePlayingCheck').checked;
+            
+            document.getElementById('loading').className = 'loading active';
+            document.getElementById('analyzeBtn').disabled = true;
+            
+            try {
+                const response = await fetch('/analyze', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        api_key: apiKey,
+                        data_content: currentData.data_content,
+                        data_type: dataType,
+                        num_themes: parseInt(numThemes),
+                        custom_prompt: customPrompt,
+                        enable_role_playing: enableRolePlaying
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    analysisResponse = data.response;
+                    document.getElementById('results').textContent = data.response;
+                    document.getElementById('resultsSection').style.display = 'block';
+                    showAlert('Analysis completed successfully', 'success');
+                    
+                    // Scroll to results
+                    document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    showAlert(`Analysis failed: ${data.error}`, 'error');
+                }
+            } catch (error) {
+                showAlert(`Analysis error: ${error.message}`, 'error');
+            } finally {
+                document.getElementById('loading').className = 'loading';
+                document.getElementById('analyzeBtn').disabled = false;
+            }
+        }
+        
+        async function exportCSV() {
+            if (!analysisResponse) {
+                showAlert('No analysis results to export', 'error');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/export_csv', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ response: analysisResponse })
+                });
+                
+                if (response.ok) {
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `qualigpt_analysis_${new Date().toISOString().slice(0,10)}.csv`;
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                    showAlert('CSV exported successfully', 'success');
+                } else {
+                    const data = await response.json();
+                    showAlert(`Export failed: ${data.error}`, 'error');
+                }
+            } catch (error) {
+                showAlert(`Export error: ${error.message}`, 'error');
+            }
+        }
+        
+        function saveAsText() {
+            if (!analysisResponse) {
+                showAlert('No analysis results to save', 'error');
+                return;
+            }
+            
+            const blob = new Blob([analysisResponse], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `qualigpt_analysis_${new Date().toISOString().slice(0,10)}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+            showAlert('Text file saved successfully', 'success');
+        }
+    </script>
+</body>
+</html>

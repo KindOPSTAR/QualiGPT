@@ -1,20 +1,9 @@
-# requirements.txt
-
-#python
-Python --version > 3.8
-
-# Qt for GUI
-PyQt5==5.15.2
-
-# OpenAI for API interaction
-openai==0.10.2
-
-# For data processing and handling
-pandas==1.2.3
-openpyxl==3.0.6
-
-# For text processing
-nltk==3.5
-
-# For reading Word files
-python-docx==0.8.10
+flask
+pandas
+openai
+python-docx
+nltk
+openpyxl
+werkzeug
+gunicorn
+requests

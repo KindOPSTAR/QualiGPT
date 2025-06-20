@@ -1,115 +1,354 @@
-# **QualiGPT**
-**QualiGPT: An easy-to-use tool for qualitative research (automatic coding)**  
+# QualiGPT Web Application
 
-<img src="graph/Logo-QualiGPT.png" alt="Logo-QualiGPT" width="400">
+A modern web-based version of QualiGPT - an AI-powered qualitative data analysis tool that uses OpenAI's GPT-4o to perform thematic analysis on interview data, focus groups, and social media posts.
 
-![Static Badge](https://img.shields.io/badge/Release%20(latest%20by%20date)-v0.1.1_alpha-brightgreen?logo=GitHub&link=https%3A%2F%2Fgithub.com%2FKindOPSTAR%2FQualiGPT%2Freleases%2Ftag%2FQualiGPTApp)
-![Static Badge](https://img.shields.io/badge/Windows-passing-brightgreen?logo=Windows)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/KindOPSTAR/QualiGPT/blob/main/LICENSE)
+## 🆕 What's New in the Web Version
 
-![Python version](https://img.shields.io/badge/python-3.8_|_Later-blue) ![Static Badge](https://img.shields.io/badge/Model-GPT--3.5_Turbo-%2300994c?logo=OpenAI&link=https%3A%2F%2Fplatform.openai.com%2Fdocs%2Fguides%2Fgpt%2Fchat-completions-api)
+This is a complete web-based reimplementation of the original QualiGPT desktop application, offering:
 
+- **No Installation Hassles**: Runs in any web browser
+- **Modern Interface**: Clean, responsive design with real-time feedback
+- **Enhanced AI**: Uses GPT-4o with 128k context window for better analysis
+- **Cross-Platform**: Works on Mac, Windows, Linux, tablets
+- **Easy Deployment**: Run locally or deploy to cloud platforms
+- **Docker Support**: Complete containerization with production-ready Gunicorn deployment
+- **Clean Output**: Enhanced GPT-4o prompts for structured results without extra commentary
 
-QualiGPT is a toolkit with a visual interactive interface based on the OpenAI API. It can assist qualitative analysts in quickly coding data from interviews, focus groups, or social media (posts or comments) stored in Word documents or spreadsheets (.xlsx or .csv). The results can be saved in .txt or .csv formats for easy and quick viewing.
+## Features
 
-<img src="graph/QualiGPT-workflow.png" alt="Logo-QualiGPT" width="1000">
-<p align="center">Figure 1. Overview of the qualitative analysis toolkit, QualiGPT. The user interface of QualiGPT is displayed on the left. On the right side, the usage flow and design logic of QualiGPT are presented.</p>
+- **Easy API Integration**: Simple connection to OpenAI API with key validation
+- **Multiple File Formats**: Support for CSV, XLSX, and DOCX files
+- **Flexible Analysis Types**: 
+  - Interviews
+  - Focus Groups
+  - Social Media Posts
+- **Customizable Analysis**:
+  - Adjustable number of themes (1-20)
+  - Role-playing mode for expert analysis
+  - Custom prompts for specific needs
+- **Smart Data Handling**: Automatic segmentation for large datasets (up to 120k tokens)
+- **Export Options**: Save results as CSV or TXT files
+- **Production Ready**: Docker support with Gunicorn for scalable deployment
 
-Before running, please check your Python environment and install the appropriate packages using  ` pip install` .
-The list of required packages is as follows:
-- `pip install nltk` 
-- `pip install openai`
-- `pip install PyQt5`
-- `pip install python-docx`
-- `pip install docx2txt`
-- `pip install pandas`
+## 🍎 Installation for Mac Users
 
-## **QualiGPT-v0.1.2-alpha**
-QualiGPT is available on ChatGPT Store! check on -> https://chatgpt.com/g/g-HtBvI9uXe-qualigpt  Note: In the ChatGPT version, QualiGPT is created based on preset prompts and does not have open-source code, so users don't need to build it themselves. We have found some websites similar to QualiGPT, but please note that we have not open-sourced or released this tool anywhere else (this Github repository and on ChatGPT GPT store only). If you find some other webs called QualiGPT, please use it with caution.
+### Prerequisites
 
-## **QualiGPT-v0.1.2-alpha**
-QualiGPT-v0.1.2-alpha will be released soon. In this new version, the user can process either inductive coding or deductive coding with QualiGPT. The users need to prepare their own codebook if they are going to run deductive coding.
+1. **Check Python Version** (Python 3.8+ required):
+   ```bash
+   python3 --version
+   ```
+   If you don't have Python 3.8+, install it from [python.org](https://www.python.org/downloads/mac-osx/)
 
-## **QualiGPT-v0.1.1-alpha**
-We have released the **[QualiGPT-v0.1.1-alpha](https://github.com/KindOPSTAR/QualiGPT/releases)** (Windows) version for testing. If you prefer not to build from the source code, please use [this](https://github.com/KindOPSTAR/QualiGPT/releases/tag/QualiGPT-v0.1.1-alpha) version.
+2. **Get an OpenAI API Key**:
+   - Visit [OpenAI Platform](https://platform.openai.com/api-keys)
+   - Create an account and generate an API key
+   - Set usage limits to control costs
 
-## **QualiGPT-v0.1.1-alpha Release Notes**
-Click [here](https://github.com/KindOPSTAR/QualiGPT/releases/tag/QualiGPT-v0.1.1-alpha) to read QualiGPT-v0.1.1-alpha Release Notes
+### Option 1: Run with Python (Recommended for Development)
 
-## **QuickStart**
-Please download `QualiGPT-v0.1.1-alpha.exe` from [Version Release](https://github.com/KindOPSTAR/QualiGPT/releases).
+#### Step 1: Download QualiGPT
+```bash
+# Clone the repository
+git clone <repository-url>
+cd QualiGPT
 
-## **Source Code & Usage** (This is an old version (v0.1.0-alpha), please use QuickStart to access the newest QualiGPT!)
-We have fully open-sourced the early version of this program, providing both .py and .ipynb files to build QualiGPT-v0.1.0-alpha. For a detailed description, please refer to the [Version Release](https://github.com/KindOPSTAR/QualiGPT/releases).
+# Or download and extract the ZIP file
+```
 
-1. Please download the `QualiGPTApp.py` file from repository.
-1. Navigate to the directory, for example, `cd ../QualiGPT` 
-2. Install the required packages `pip install -r requirements.txt` (If you prefer not to use the `requirements.txt` file, you can manually install each package.)
-3. Once you have installed all the packages required for this tool, please run (`python QualiGPTApp.py`) through the `command prompt` (cmd), or **(highly recommended)** compile from [VS Code](https://code.visualstudio.com/). If you are using [Jupyter Notebook](https://jupyter.org/), please convert `QualiGPTApp.py` to `QualiGPTApp.ipynb`. Please note that after each run, you'll need to restart the kernel to run it again.  
+#### Step 2: Create Virtual Environment
+```bash
+# Create a virtual environment
+python3 -m venv venv
 
-### How to get OpenAI API.
+# Activate it
+source venv/bin/activate
 
-- Please register and log in to [OpenAI](https://openai.com/) to request your personal API key and keep it safe.
+# You should see (venv) in your terminal prompt
+```
 
-### User manual
+#### Step 3: Install Dependencies
+```bash
+# Upgrade pip first
+pip install --upgrade pip
 
-**Please note: Since QualiGPT is currently in a testing version, it's important to set a usage cap for your API. Although the cost of GPT-3.5 Turbo is low, this could be a necessary action to reduce risk! Besides, in the coming period (which might be a few weeks or months), QualiGPT with updated models will be released.**
+# Install all required packages
+pip install -r requirements.txt
 
-Please follow the **user manual** to use QualiGPT.
+# Download NLTK data (one-time setup)
+python -c "import nltk; nltk.download('punkt_tab')"
+```
 
-- Step 1. ① (enter the API Key)
-- Step 2. ② (connect to API)
-- Step 3. ③ (select dataset)
-- Step 4. ④ (submit dataset)
-- Step 5. ⑤ (optional)
-- Step 6. ⑥ (optional)
-- Step 7. ⑦ (select the type of dataset)
-- Step 8. ⑧ (select the number of themes)
-- Step 9. ⑨ (optional)
-- Step 10. ⑩ (submit the task)
-- Step 11. ⑪ or ⑫ (save results)
+#### Step 4: Run the Application
+```bash
+# Start the web server
+python qualigpt-webapp.py
+```
 
+You should see:
+```
+* Running on http://127.0.0.1:5000
+* Debug mode: on
+```
 
-<img src="graph/QualiGPT Toolkit Instruction Manual.png" alt="User manual" width="1200">
-<p align="center">Figure 2. User manual</p>
+#### Step 5: Access the Application
+Open your web browser and go to: **http://localhost:5000**
 
-## **Timeline for Updates**
---------------------Mar 30, 2024---------------------
+### Option 2: Run with Docker (Recommended for Production)
 
-Recently, I have received several reports of not being able to connect to the API, please try installing the openai library in python first via "pip install openai". If this doesn't work, please wait a while and I will upload a jupyter notebook with the original code in a few days so you can build it yourself.
+#### Prerequisites for Docker
+1. **Install Docker Desktop for Mac**:
+   - Download from [docker.com](https://www.docker.com/products/docker-desktop/)
+   - Install and start Docker Desktop
+   - Verify installation: `docker --version`
 
---------------------Feb 15, 2024---------------------
+#### Step 1: Download QualiGPT
+```bash
+# Clone the repository
+git clone <repository-url>
+cd QualiGPT
+```
 
-I finally found the time to fix a few bugs, thanks to the feedback from supporters! In version v0.1.1-alpha, Qualigpt can now support the analysis of large datasets. I've modified the program's execution logic, and the issue where reaching the token limit prevented API calls has been resolved.
+#### Step 2: Build and Run with Docker
+```bash
+# Build and start the application
+docker-compose up --build
 
---------------------Oct 9, 2024---------------------
+# Or run in background (detached mode)
+docker-compose up -d --build
+```
 
-First day of release.
+#### Step 3: Access the Application
+Open your web browser and go to: **http://localhost:5005**
 
+#### Docker Management Commands
+```bash
+# View running containers
+docker-compose ps
 
-## **Citation**
-Please cite these papers in your publications if QualiGPT helps your research. The theoretical foundation for developing QualiGPT comes from: **[Redefining Qualitative Analysis in the AI Era: Utilizing ChatGPT for Efficient Thematic Analysis](https://arxiv.org/abs/2309.10771)**.
+# View logs
+docker-compose logs -f qualigpt
 
-> @misc{zhang2023redefining,
-      title={Redefining Qualitative Analysis in the AI Era: Utilizing ChatGPT for Efficient Thematic Analysis}, 
-      author={He Zhang and Chuhao Wu and Jingyi Xie and Yao Lyu and Jie Cai and John M. Carroll},
-      year={2023},
-      eprint={2309.10771},
-      archivePrefix={arXiv},
-      primaryClass={cs.HC}
-}
+# Stop the application
+docker-compose down
 
-> @misc{zhang2023qualigpt,
-      title={QualiGPT: GPT as an easy-to-use tool for qualitative coding}, 
-      author={He Zhang and Chuhao Wu and Jingyi Xie and ChanMin Kim and John M. Carroll},
-      year={2023},
-      eprint={2310.07061},
-      archivePrefix={arXiv},
-      primaryClass={cs.HC}
-}
+# Restart the application
+docker-compose restart
+```
 
-## **License**
-QualiGPT is freely available for use, and may be redistributed any content in this repository under the [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode) and the [MIT License](https://opensource.org/license/mit/). QualiGPT is freely available for academic and commercial use. We hope it benefits the research community and facilitates further advancements in the field. We encourage users to contribute and provide feedback to improve the tool.
+## 📖 How to Use QualiGPT
 
-## **Additional Notes**
-This project is one of the works in a series of projects. To view the complete project, please visit the [LLMs x Generative AI Project](https://he-zhang.com/home/531-2/llmsxai/).
+### Step 1: Connect to OpenAI
+1. Enter your OpenAI API key in the "API Connection" section
+2. Click "🔗 Connect" to validate your key
+3. Wait for the green "Connected" status
+
+### Step 2: Upload Your Data
+1. Click the upload area or drag-and-drop your file
+2. **Supported formats**:
+   - **CSV**: Comma-separated values with headers
+   - **XLSX**: Excel spreadsheet files
+   - **DOCX**: Microsoft Word documents
+3. **File size limit**: 16MB maximum
+4. Preview your data to ensure it loaded correctly
+
+### Step 3: Configure Analysis
+1. **Select Data Type**:
+   - **Interview**: For one-on-one interview transcripts
+   - **Focus Group**: For group discussion data
+   - **Social Media Posts**: For social media content analysis
+
+2. **Set Number of Themes**: Choose 1-20 themes to extract
+
+3. **Optional Settings**:
+   - **Role-Playing Mode**: Enable for expert-level analysis
+   - **Custom Prompt**: Add specific instructions for your analysis
+   - **Header Descriptions**: Explain what each column contains
+
+### Step 4: Run Analysis
+1. Click "🔍 Analyze Data"
+2. Wait for processing (5-30 seconds for most files)
+3. Large files are automatically segmented and processed in parts
+4. View the structured results with themes, descriptions, quotes, and participant counts
+
+### Step 5: Export Results
+- **CSV Export**: Download for Excel/SPSS analysis
+- **Text Export**: Save for documentation or reports
+
+## 📁 Sample Data Files
+
+The repository includes sample files for testing:
+- `qualigpt-test-data.csv` - Sample CSV interview data
+- `sample-social-media.xlsx` - Sample Excel social media data
+- `sample-interview.docx` - Sample Word document
+
+## 🔧 File Format Guidelines
+
+### CSV/XLSX Files
+```csv
+Participant,Age,Response
+P1,25,"I think remote work has improved my work-life balance"
+P2,32,"The biggest challenge is staying connected with the team"
+P3,28,"I miss the spontaneous conversations in the office"
+```
+
+### DOCX Files
+- Each paragraph becomes a separate data entry
+- Best for unstructured interview transcripts
+- Automatically extracts text content
+
+## 🚀 Advanced Usage
+
+### Development Mode
+For development with live code reloading:
+```bash
+# Create docker-compose.override.yml
+cat > docker-compose.override.yml << EOF
+version: '3.8'
+services:
+  qualigpt:
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1
+    volumes:
+      - ./qualigpt-webapp.py:/app/qualigpt-webapp.py
+      - ./templates:/app/templates
+    command: ["python", "qualigpt-webapp.py"]
+EOF
+
+# Run in development mode
+docker-compose up
+```
+
+### Production Deployment
+```bash
+# Using Gunicorn directly
+pip install gunicorn
+gunicorn -w 4 -b 0.0.0.0:8000 qualigpt-webapp:app
+
+# Or use Docker (recommended)
+docker-compose up -d
+```
+
+### Environment Variables
+```bash
+# Optional: Set Flask environment
+export FLASK_ENV=production
+
+# For development
+export FLASK_ENV=development
+export FLASK_DEBUG=1
+```
+
+## 🔍 Troubleshooting
+
+### Common Issues on Mac
+
+**Python Command Not Found**:
+```bash
+# Try python3 instead of python
+python3 qualigpt-webapp.py
+```
+
+**Permission Denied**:
+```bash
+# Make sure you're in the virtual environment
+source venv/bin/activate
+```
+
+**Port Already in Use**:
+```bash
+# Kill processes using port 5000
+sudo lsof -ti:5000 | xargs kill -9
+
+# Or use Docker on port 5005
+docker-compose up
+```
+
+**NLTK Download Issues**:
+```bash
+# Manual NLTK download
+python -c "import nltk; nltk.download('punkt_tab', download_dir='./nltk_data')"
+```
+
+### API Connection Issues
+- **Invalid API Key**: Verify your key at [OpenAI Platform](https://platform.openai.com/api-keys)
+- **No Credits**: Check your OpenAI account billing
+- **Rate Limits**: Wait a moment and try again
+
+### File Upload Problems
+- **File Too Large**: Maximum 16MB - compress or split your file
+- **Wrong Format**: Ensure file extension matches content (.csv for CSV files)
+- **Encoding Issues**: Save CSV files with UTF-8 encoding
+
+### Docker Issues
+- **Docker Not Running**: Start Docker Desktop application
+- **Port Conflicts**: Use `docker-compose down` then `docker-compose up`
+- **Build Errors**: Try `docker-compose build --no-cache`
+
+## 📊 Understanding Results
+
+QualiGPT generates structured analysis with:
+
+- **Theme**: Main concepts identified in your data
+- **Description**: Detailed explanation of each theme
+- **Quotes**: Supporting evidence from your data
+- **Participant Count**: Number of participants mentioning each theme
+
+Results are formatted for easy import into:
+- Excel/Google Sheets (CSV export)
+- SPSS/R (CSV export)
+- Word/Google Docs (TXT export)
+- Academic papers (structured format)
+
+## 🔒 Security & Privacy
+
+- **API Keys**: Stored only in memory during your session
+- **Data Processing**: Files processed in memory, not saved to disk
+- **No Data Retention**: Your data is never stored on our servers
+- **HTTPS Ready**: Use reverse proxy for secure production deployment
+
+## 🆚 Comparison: Desktop vs Web Version
+
+| Feature | Desktop Version | Web Version |
+|---------|----------------|-------------|
+| Installation | Complex setup required | No installation needed |
+| Platform | Windows/Mac/Linux apps | Any web browser |
+| Updates | Manual download | Automatic |
+| Deployment | Single user | Multi-user capable |
+| AI Model | GPT-3.5-turbo | GPT-4o (enhanced) |
+| Context Window | 4k tokens | 128k tokens |
+| Interface | PyQt5 desktop | Modern web UI |
+| File Sharing | Local files only | Web-based sharing |
+| Collaboration | Not supported | Multi-user ready |
+
+## 🔮 Future Enhancements
+
+- Support for additional AI models (Claude, Gemini)
+- Batch processing for multiple files
+- Real-time collaborative analysis
+- Advanced visualization dashboards
+- Integration with survey platforms
+- API for programmatic access
+
+## 📄 License
+
+This project is released under the MIT License.
+
+## 🙏 Credits
+
+- **Original QualiGPT**: He Zhang et al. - Desktop application research
+- **Web Version**: Modern reimplementation for accessible qualitative research
+- **AI Integration**: OpenAI GPT-4o for enhanced analysis capabilities
+
+## 📞 Support
+
+For issues or questions:
+1. Check the troubleshooting section above
+2. Review sample files for format examples
+3. Verify your OpenAI API key and credits
+4. Ensure your data meets format requirements
+
+---
+
+**Ready to analyze your qualitative data? Start with the installation instructions above! 🚀**
